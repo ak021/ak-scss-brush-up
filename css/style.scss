@@ -1,0 +1,38 @@
+@import "./resets";
+@import "./variables";
+
+//functions in sass
+@function weight($weight-name) {
+  @return map-get($font-weights, $weight-name);
+}
+
+body {
+  background-color: $primary-color;
+}
+
+h1 {
+  color: $text-color;
+}
+
+.para {
+  font-size: 1.5rem;
+  // this is hw we extract value from map.
+  font-weight: map-get($font-weights, bold);
+  color: $text-color;
+}
+
+//nesting
+.container {
+  width: 80%;
+  margin: 0 auto;
+  //& represents parent
+  #{&}_paragraph {
+    text-align: center;
+    color: $accent-color;
+    font-weight: weight(regular); //calling function
+
+    &:hover {
+      color: pink;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #272727;
+}
+
+h1 {
+  color: #fff;
+}
+
+.para {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+.container .container_paragraph {
+  text-align: center;
+  color: #ff652f;
+  font-weight: 400;
+}
+.container .container_paragraph:hover {
+  color: pink;
+}/*# sourceMappingURL=style.css.map */
