@@ -6,6 +6,25 @@
   @return map-get($font-weights, $weight-name);
 }
 
+//similar to function but used to define styles, and functions should be used for computations.
+//can accept parameters as well
+
+//@mixin flexCenter {
+@mixin flexCenter($direction: true) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: space-between;
+  align-items: center;
+}
+
+//we can use if in sass
+@mixin theme($light-theme: true) {
+  @if $light-theme {
+    background: lighten($primary-color, 100%);
+    color: darken($text-color, 100%);
+  }
+}
+
 body {
   background-color: $primary-color;
 }
@@ -23,16 +42,31 @@ h1 {
 
 //nesting
 .container {
+  @include flexCenter;
+  margin-top: 100px;
   width: 80%;
-  margin: 0 auto;
+  margin: 2rem auto;
   //& represents parent
-  #{&}_paragraph {
+  #{&}_paragraph1 {
+    border: 1px solid #fff;
+    padding: 0.5rem;
+    width: 40%;
     text-align: center;
-    color: $accent-color;
+    color: teal;
     font-weight: weight(regular); //calling function
 
     &:hover {
       color: pink;
     }
   }
+  #{&}_paragraph2 {
+    @extend .container_paragraph1;
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+.light {
+  @include theme(true);
 }
