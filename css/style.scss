@@ -47,7 +47,7 @@ h1 {
   width: 80%;
   margin: 2rem auto;
   //& represents parent
-  #{&}_paragraph1 {
+  #{&}_paragraph1 {  //interpolation, without using # sass will take it as a new class
     border: 1px solid #fff;
     padding: 0.5rem;
     width: 40%;
